@@ -5,6 +5,8 @@ import unittest
 from distutils.core import setup, Command
 
 
+VERSION = '1.2.0'
+
 class Test(Command):
     description = "run the test suite"
     # options as listed with "--help test"
@@ -44,31 +46,33 @@ class Test(Command):
 with open("README.rst") as readme:
     long_description = readme.read()
 
-setup(name="discid",
-        version="1.2.0",
-        description="Python binding of Libdiscid",
-        long_description=long_description,
-        author="Johannes Dewender",
-        author_email="brainz@JonnyJD.net",
-        url="https://python-discid.readthedocs.org/",
-        license="LGPLv3+",
-        packages = ["discid"],
-        cmdclass = {"test": Test},
-        classifiers=[
-            "Development Status :: 5 - Production/Stable",
-            "Intended Audience :: Developers",
-            "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
-            "Operating System :: OS Independent",
-            "Programming Language :: Python :: 2.6",
-            "Programming Language :: Python :: 2.7",
-            "Programming Language :: Python :: 3",
-            "Programming Language :: Python :: 3.1",
-            "Programming Language :: Python :: 3.2",
-            "Programming Language :: Python :: 3.3",
-            "Programming Language :: Python :: 3.4",
-            "Topic :: Multimedia :: Sound/Audio :: CD Audio :: CD Ripping",
-            "Topic :: Software Development :: Libraries :: Python Modules"
-            ]
-        )
+
+if __name__ == '__main__':
+    setup(name="discid",
+            version=VERSION,
+            description="Python binding of Libdiscid",
+            long_description=long_description,
+            author="Johannes Dewender",
+            author_email="brainz@JonnyJD.net",
+            url="https://python-discid.readthedocs.org/",
+            license="LGPLv3+",
+            packages = ["discid"],
+            cmdclass = {"test": Test},
+            classifiers=[
+                "Development Status :: 5 - Production/Stable",
+                "Intended Audience :: Developers",
+                "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+                "Operating System :: OS Independent",
+                "Programming Language :: Python :: 2.6",
+                "Programming Language :: Python :: 2.7",
+                "Programming Language :: Python :: 3",
+                "Programming Language :: Python :: 3.1",
+                "Programming Language :: Python :: 3.2",
+                "Programming Language :: Python :: 3.3",
+                "Programming Language :: Python :: 3.4",
+                "Topic :: Multimedia :: Sound/Audio :: CD Audio :: CD Ripping",
+                "Topic :: Software Development :: Libraries :: Python Modules"
+                ]
+            )
 
 # vim:set shiftwidth=4 smarttab expandtab:
